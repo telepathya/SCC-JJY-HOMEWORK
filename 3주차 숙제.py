@@ -23,9 +23,11 @@ for i in range( 50 ) :
     rank = i+1
     title = charts[i].select_one("td.info > a.title.ellipsis").text.strip()
     singer = charts[i].select_one("td.info > a.artist.ellipsis").text.strip()
+
     #db.homework.insert_one({'rank':i+1})
     #db.homework.insert_one({'title':title})
     #db.homework.insert_one({'singer':singer})
+
     dic = {'rank':i+1,'title':title,'singer':singer}
     db.homework.insert_one(dic)
 
